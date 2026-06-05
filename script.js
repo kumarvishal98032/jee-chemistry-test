@@ -55,7 +55,30 @@ function submitTest(){
     if((correct + wrong) > 0){
         accuracy = ((correct / (correct + wrong)) * 100).toFixed(2);
     }
+    let name =
+document.getElementById("studentName").value;
 
+fetch(
+"https://script.google.com/macros/s/AKfycbyOVF62JkHD2nYJiS5kmctlb8cy6nVrcoM3etKbUTEJDywW-Th-vkk7tqqFEPyCfkn21w/exec",
+{
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        name:name,
+        roll:roll,
+        score:score,
+        correct:correct,
+        wrong:wrong,
+        unattempted:unattempted
+    })
+}
+)
+.then(response => response.text())
+.then(data => console.log("Saved:", data))
+.catch(error => console.error("Error:", error));
+    
     document.body.innerHTML = `
     <div style="font-family:Arial;padding:30px;max-width:800px;margin:auto;">
         <h1>JEE Chemistry Mock Test Result</h1>
