@@ -1,6 +1,28 @@
 let current=0;let answers=new Array(questions.length).fill(null);
-function loadQ(){document.getElementById('qno').innerHTML='Question '+(current+1);document.getElementById('question').innerHTML=questions[current].question;let h='';questions[current].options.forEach((o,i)=>{h+=`<div><input type='radio' name='o' ${answers[current]==i?'checked':''} onclick='answers[current]=${i}'> ${o}</div>`});document.getElementById('options').innerHTML=h;}
-function palette(){let p='';for(let i=0;i<questions.length;i++){p+=`<button class='palette-btn' onclick='gotoQ(${i})'>${i+1}</button>`;}document.getElementById('palette').innerHTML=p;}
+function loadQ(){document.getElementById('qno').innerHTML='Question '+(current+1);document.getElementById('question').innerHTML=questions[current].question;let h='';questions[current].options.forEach((o,i)=>{h+=`<div><input type='radio' name='o' ${answers[current]==i?'checked':''} onclick='answers[current]=${i}; palette();'> ${o}</div>`});document.getElementById('options').innerHTML=h;}
+function palette(){
+
+    let p='';
+
+    for(let i=0;i<questions.length;i++){
+
+        let color = "#cccccc"; // Not Visited
+
+        if(answers[i] !== null){
+            color = "#28a745"; // Green = Answered
+        }
+
+        p += `
+        <button
+            class='palette-btn'
+            style='background:${color};color:white;font-weight:bold;'
+            onclick='gotoQ(${i})'>
+            ${i+1}
+        </button>`;
+    }
+
+    document.getElementById('palette').innerHTML = p;
+}
 function gotoQ(i){current=i;loadQ();}
 function nextQ(){if(current<questions.length-1){current++;loadQ();}}
 function prevQ(){if(current>0){current--;loadQ();}}
