@@ -67,7 +67,6 @@ fetch(
     },
     body:JSON.stringify({
         name:name,
-        roll:roll,
         score:score,
         correct:correct,
         wrong:wrong,
