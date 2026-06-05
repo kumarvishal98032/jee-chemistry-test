@@ -1,1 +1,9 @@
-body{font-family:Arial;background:#f4f4f4;margin:0}.top{display:flex;justify-content:space-between;background:#0b5ed7;color:#fff;padding:10px}.container{display:flex}.left{width:75%;padding:20px}.right{width:25%;background:#fff;padding:20px}.palette-btn{width:40px;height:40px;margin:3px}
+body{font-family:Arial;background:#f4f4f4;margin:0}.top{display:flex;justify-content:space-between;background:#0b5ed7;color:#fff;padding:10px}.container{display:flex}.left{width:75%;padding:20px}.right{width:25%;background:#fff;padding:20px}.palette-btn{
+width:45px;
+height:45px;
+margin:4px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+}
