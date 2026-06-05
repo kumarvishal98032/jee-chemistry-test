@@ -59,7 +59,7 @@ function submitTest(){
 document.getElementById("studentName").value;
 
 fetch(
-"https://script.google.com/macros/s/AKfycbyOVF62JkHD2nYJiS5kmctlb8cy6nVrcoM3etKbUTEJDywW-Th-vkk7tqqFEPyCfkn21w/exec",
+"https://script.google.com/macros/s/AKfycbyzVO9YPLSgfQU5Lmv6ux_lXwbz0figyTdXBtSa4QoexKT2a012ik2gYnn__nPK_uTdqA/exec",
 {
     method:"POST",
     headers:{
